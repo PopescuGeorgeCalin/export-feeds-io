@@ -1,0 +1,12 @@
+{
+  "vtex-menu.export-feeds-io-button.title": "Export Feeds",
+  "export-feeds-io.header.title": "Export Feeds",
+  "export-feeds-io.block.title": "Fisiere generate",
+  "export-feeds-io.toast.success": "Catalogul se sincronizeaza...",
+  "export-feeds-io.emptyStateLabel": "Fără date",
+  "export-feeds-io.showRows": "Arată randuri",
+  "export-feeds-io.of": "din",
+  "export-feeds-io.Hourly": "Orar",
+  "export-feeds-io.Daily": "Zilnic",
+  "export-feeds-io.Monthly": "Lunar"
+}

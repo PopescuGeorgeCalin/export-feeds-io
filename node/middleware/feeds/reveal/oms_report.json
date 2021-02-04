@@ -1,0 +1,113 @@
+{
+  "name": "Reveal Orders",
+  "columns": [
+    {
+      "header": "order_eid",
+      "query": "orderId",
+      "usePath": false,
+      "translationPrefix": null,
+      "defaultLanguage": null
+    },
+    {
+      "header": "customer_eid",
+      "query": "clientProfileData.userProfileId",
+      "usePath": false,
+      "translationPrefix": null,
+      "defaultLanguage": null
+    },
+    {
+      "header": "customer_email",
+      "query": "clientProfileData.email",
+      "usePath": false,
+      "translationPrefix": null,
+      "defaultLanguage": null
+    },
+    {
+      "header": "status",
+      "query": "status",
+      "usePath": false,
+      "translationPrefix": "admin/orders.order-status.",
+      "defaultLanguage": "en"
+    },
+    {
+      "header": "placed_at",
+      "query": "$moment(creationDate).add($utcHours,'h').add($utcMinutes,'m').format('YYYY-MM-DD HH:mm:ss')",
+      "usePath": false,
+      "translationPrefix": null,
+      "defaultLanguage": null
+    },
+    {
+      "header": "last_modified_at",
+      "query": "$moment(lastChange).add($utcHours,'h').add($utcMinutes,'m').format('YYYY-MM-DD HH:mm:ss')",
+      "usePath": false,
+      "translationPrefix": null,
+      "defaultLanguage": null
+    },
+    {
+      "header": "currency",
+      "query": "storePreferencesData.currencyCode",
+      "usePath": false,
+      "translationPrefix": null,
+      "defaultLanguage": null
+    },
+    {
+      "header": "grand_total",
+      "query": "value / 100",
+      "usePath": null,
+      "translationPrefix": null,
+      "defaultLanguage": null
+    },
+    {
+      "header": "bc_grand_total",
+      "query": "value / 100",
+      "usePath": null,
+      "translationPrefix": null,
+      "defaultLanguage": null
+    },
+    {
+      "header": "shipping",
+      "query": "shippingData.logisticsInfo[itemIndex=$pathIndex].( $selectedSLA := selectedSla; slas[id=$selectedSLA] and slas[id=$selectedSLA].price ? (slas[id=$selectedSLA].price / 100) : (price ? (price / 100) : 0))  +  shippingData.logisticsInfo[itemIndex=$pathIndex].( $selectedSLA := selectedSla; slas[id=$selectedSLA].deliveryWindow and slas[id=$selectedSLA].deliveryWindow.price ? (slas[id=$selectedSLA].deliveryWindow.price / 100) : (deliveryWindow ?  (deliveryWindow.price/100) : 0))",
+      "usePath": null,
+      "translationPrefix": null,
+      "defaultLanguage": null
+    },
+    {
+      "header": "bc_shipping",
+      "query": "shippingData.logisticsInfo[itemIndex=$pathIndex].( $selectedSLA := selectedSla; slas[id=$selectedSLA] and slas[id=$selectedSLA].price ? (slas[id=$selectedSLA].price / 100) : (price ? (price / 100) : 0))  +  shippingData.logisticsInfo[itemIndex=$pathIndex].( $selectedSLA := selectedSla; slas[id=$selectedSLA].deliveryWindow and slas[id=$selectedSLA].deliveryWindow.price ? (slas[id=$selectedSLA].deliveryWindow.price / 100) : (deliveryWindow ?  (deliveryWindow.price/100) : 0))",
+      "usePath": null,
+      "translationPrefix": null,
+      "defaultLanguage": null
+    },
+    {
+      "header": "order_discount",
+      "query": "totals[id=\"Discounts\"].value / 100",
+      "usePath": false,
+      "translationPrefix": null,
+      "defaultLanguage": null
+    },
+    {
+      "header": "bc_order_discount",
+      "query": "totals[id=\"Discounts\"].value / 100",
+      "usePath": false,
+      "translationPrefix": null,
+      "defaultLanguage": null
+    },
+    {
+      "header": "products",
+      "query": "[$map(items, function($v) { $.{'product_eid': $v.id, 'parent_product_eid': $v.productId, 'status': status, 'placed_at': $moment(creationDate).add($utcHours,'h').add($utcMinutes,'m').format('YYYY-MM-DD HH:mm:ss'), 'last_modified_at': $moment(lastChange).add($utcHours,'h').add($utcMinutes,'m').format('YYYY-MM-DD HH:mm:ss'), 'qty': $v.quantity, 'product_price': $v.price / 100, 'total': value / 100,  'bc_total': value / 100 }})]",
+      "usePath": false
+    },
+    {
+      "header": "payment_type",
+      "query": "paymentData.transactions.payments.paymentSystemName",
+      "usePath": false
+    },
+    {
+      "header": "shipping_provider",
+      "query": "$join(shippingData.logisticsInfo[itemIndex=$pathIndex].deliveryIds.courierName, ', ')",
+      "usePath": null,
+      "translationPrefix": null,
+      "defaultLanguage": null
+    }
+  ]
+}

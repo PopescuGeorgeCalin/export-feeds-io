@@ -1,0 +1,9 @@
+type Query {
+  products(
+    term: String!
+    page: Int!
+    pageSize: Int!
+    collectionId: ID
+    filters: ProductFilter
+  ): [Product] @cacheControl(scope: PRIVATE)
+}

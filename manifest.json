@@ -1,0 +1,91 @@
+{
+  "vendor": "vtex",
+  "name": "export-feeds-io",
+  "title": "Feed Export",
+  "description": "Create Feed files based on store's catalog. This file will be placed in masterdata.",
+  "version": "0.0.1-beta.2",
+  "dependencies": {
+    "vtex.search-graphql": "0.x",
+    "vtex.graphql-server": "1.x",
+    "vtex.styleguide": "9.x",
+    "vtex.file-manager": "0.x"
+  },
+  "builders": {
+    "node": "6.x",
+    "masterdata": "1.x",
+    "admin": "0.x",
+    "react": "3.x",
+    "messages": "1.x",
+    "docs": "0.x"
+  },
+  "registries": [
+    "smartcheckout"
+  ],
+  "credentialType": "absolute",
+  "scripts": {
+    "postreleasy": "vtex publish --verbose"
+  },
+  "policies": [
+    {
+      "name": "vtex.file-manager:file-manager-read-write"
+    },
+    {
+      "name": "colossus-write-logs"
+    },
+    {
+      "name": "colossus-fire-event"
+    },
+    {
+      "name": "outbound-access",
+      "attrs": {
+        "host": "{{account}}.vtexcommercestable.com.br",
+        "path": "*"
+      }
+    },
+    {
+      "name": "outbound-access",
+      "attrs": {
+        "host": "{{account}}.myvtex.com/",
+        "path": "*"
+      }
+    },
+    {
+      "name": "outbound-access",
+      "attrs": {
+        "host": "api.vtex.com",
+        "path": "/api/*"
+      }
+    },
+    {
+      "name": "outbound-access",
+      "attrs": {
+        "host": "portal.vtexcommercestable.com.br",
+        "path": "/api/*"
+      }
+    },
+    {
+      "name": "outbound-access",
+      "attrs": {
+        "host": "s3.amazonaws.com",
+        "path": "OMSReport/v3/_finished/{{account}}/*"
+      }
+    },
+    {
+      "name": "ADMIN_DS"
+    },
+    {
+      "name": "vtex.search-graphql:resolve-graphql"
+    },
+    {
+      "name": "vtex.graphql-server:resolve-graphql"
+    },
+    {
+      "name": "graphql-query"
+    }
+  ],
+  "billingOptions": {
+    "free": true,
+    "termsURL": "https://url.to.the/terms"
+  },
+  "$schema": "https://raw.githubusercontent.com/vtex/node-vtex-api/master/gen/manifest.schema"
+}

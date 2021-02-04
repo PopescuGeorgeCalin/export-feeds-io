@@ -1,0 +1,36 @@
+{
+  "allowGetAll": true,
+  "publicRead": [
+    "filename",
+    "fileformat",
+    "feedType",
+    "collectionId",
+    "size",
+    "date",
+    "download",
+    "updateHour",
+    "updateDay"
+  ],
+  "publicWrite": [
+    "filename",
+    "fileformat",
+    "feedType",
+    "collectionId",
+    "size",
+    "date",
+    "download",
+    "updateHour",
+    "updateDay"
+  ],
+  "publicFilter": [
+    "filename",
+    "fileformat",
+    "feedType",
+    "collectionId",
+    "size",
+    "date",
+    "download",
+    "updateHour",
+    "updateDay"
+  ]
+}

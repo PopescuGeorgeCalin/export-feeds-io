@@ -1,0 +1,12 @@
+{
+  "vtex-menu.export-feeds-io-button.title": "Export Feeds",
+  "export-feeds-io.header.title": "Export Feeds",
+  "export-feeds-io.block.title": "Generated files",
+  "export-feeds-io.toast.success": "Catalog is syncronizing...",
+  "export-feeds-io.emptyStateLabel": "No data",
+  "export-feeds-io.showRows": "Show rows",
+  "export-feeds-io.of": "of",
+  "export-feeds-io.Hourly": "Hourly",
+  "export-feeds-io.Daily": "Daily",
+  "export-feeds-io.Monthly": "Monthly"
+}

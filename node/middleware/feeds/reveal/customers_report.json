@@ -1,0 +1,75 @@
+{
+  "name": "Reveal Customers",
+  "columns": [
+    {
+      "header": "customer_eid",
+      "query": "userId",
+      "usePath": false,
+      "translationPrefix": null,
+      "defaultLanguage": null
+    },
+    {
+      "header": "email",
+      "query": "email",
+      "usePath": false,
+      "translationPrefix": null,
+      "defaultLanguage": null
+    },
+    {
+      "header": "date_registered",
+      "query": "$moment(createdAt).format('YYYY-MM-DD')",
+      "usePath": false,
+      "translationPrefix": null,
+      "defaultLanguage": null
+    },
+    {
+      "header": "first_name",
+      "query": "firstName",
+      "usePath": false,
+      "translationPrefix": null,
+      "defaultLanguage": null
+    },
+    {
+      "header": "last_name",
+      "query": "lastName",
+      "usePath": false,
+      "translationPrefix": null,
+      "defaultLanguage": null
+    },
+    {
+      "header": "country",
+      "query": "localeDefault",
+      "usePath": false,
+      "translationPrefix": null,
+      "defaultLanguage": null
+    },
+    {
+      "header": "gender",
+      "query": "gender = 'male' ? 'm' : (gender = 'female' ? 'f' : 'o')",
+      "usePath": false,
+      "translationPrefix": null,
+      "defaultLanguage": null
+    },
+    {
+      "header": "yob",
+      "query": "$boolean(birthDate) ? $number($moment(birthDate).format('YYYY')) : 1901 ",
+      "usePath": null,
+      "translationPrefix": null,
+      "defaultLanguage": null
+    },
+    {
+      "header": "accepts_marketing",
+      "query": 1,
+      "usePath": null,
+      "translationPrefix": null,
+      "defaultLanguage": null
+    },
+    {
+      "header": "custom_attributes",
+      "query": "$eval('{}')",
+      "usePath": null,
+      "translationPrefix": null,
+      "defaultLanguage": null
+    }
+  ]
+}

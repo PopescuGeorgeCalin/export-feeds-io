@@ -1,0 +1,35 @@
+{
+  "$schema": "http://json-schema.org/schema#",
+  "title": "feeds",
+  "type": "object",
+  "properties": {
+    "filename": {
+      "type": "string"
+    },
+    "fileformat": {
+      "type": "string"
+    },
+    "feedType": {
+      "type": "string"
+    },
+    "collectionId": {
+      "type": "string"
+    },
+    "size": {
+      "type": "number"
+    },
+    "date": {
+      "type": "string"
+    },
+    "download": {
+      "type": "string"
+    },
+    "updateHour": {
+      "type": "number"
+    },
+    "updateDay": {
+      "type": "number"
+    }
+  },
+  "required": []
+}

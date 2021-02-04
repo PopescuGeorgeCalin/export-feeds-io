@@ -1,0 +1,54 @@
+{
+  "name": "Reveal Products",
+  "columns": [
+    {
+      "header": "id",
+      "query": "id",
+      "usePath": false,
+      "translationPrefix": null,
+      "defaultLanguage": null
+    },
+    {
+      "header": "categoryid",
+      "query": "categoryId",
+      "usePath": false,
+      "translationPrefix": null,
+      "defaultLanguage": null
+    },
+    {
+      "header": "items",
+      "query": "[items]",
+      "usePath": false,
+      "translationPrefix": null,
+      "defaultLanguage": null
+    },
+    {
+      "header": "link",
+      "query": "link",
+      "usePath": false,
+      "translationPrefix": null,
+      "defaultLanguage": null
+    },
+    {
+      "header": "description",
+      "query": "description",
+      "usePath": false,
+      "translationPrefix": null,
+      "defaultLanguage": null
+    },
+    {
+      "header": "brand",
+      "query": "brand",
+      "usePath": false,
+      "translationPrefix": null,
+      "defaultLanguage": null
+    },
+    {
+      "header": "title",
+      "query": "titleTag",
+      "usePath": false,
+      "translationPrefix": null,
+      "defaultLanguage": null
+    }
+  ]
+}

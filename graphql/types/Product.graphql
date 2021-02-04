@@ -1,0 +1,119 @@
+type Product {
+  """
+  ID of the Product
+  """
+  id: ID!
+  """
+  Cache key
+  """
+  cacheId: ID!
+  """
+  Name of the Product
+  """
+  name: String! @translatableV2
+  """
+  ID of the department of the product
+  """
+  departmentId: ID
+  """
+  Product Department
+  """
+  department: Category
+  """
+  Id of Product Category
+  """
+  categoryId: ID!
+  """
+  Category Tree
+  """
+  categoryFullPath: String
+  """
+  Product Category
+  """
+  category: Category
+  """
+  Id of the Product Brand
+  """
+  brandId: ID
+  """
+  Product Brand
+  """
+  brand: Brand
+  """
+  Value that compose the URL for the Product inside the store
+  """
+  linkId: String @translatableV2
+  """
+  Product reference ID
+  """
+  refId: String
+  """
+  If the Product are visible in search and list pages
+  """
+  isVisible: Boolean!
+  """
+  Product description, HTML is allowed
+  """
+  description: String @translatableV2
+  """
+  Product short description
+  """
+  shortDescription: String @translatableV2
+  """
+  Product Release Date, for list ordering and Product cluster highlight
+  """
+  releaseDate: String
+  """
+  Alternatives keywords to improve the Product findability
+  """
+  keywords: [String]! @translatableV2
+  """
+  Meta title of the Product page
+  """
+  title: String @translatableV2
+  """
+  If the Product is ative
+  """
+  isActive: Boolean!
+  """
+  SKUTax code
+  """
+  taxCode: String
+  """
+  Meta description for the Product page
+  """
+  metaTagDescription: String @translatableV2
+  """
+  Product Supplier ID
+  """
+  supplierId: ID
+  """
+  If the product can be visible without stock
+  """
+  showWithoutStock: Boolean!
+  """
+  Value used to guarantee the ordering of Products
+  """
+  score: Int
+  """
+  Product's sales channel
+  """
+  salesChannel: [SalesChannel]
+}
+
+input ProductFilter {
+  filter: String
+  categoryId: ID
+  brandId: ID
+  supplierId: ID
+  salesChannelId: ID
+  refId: ID
+  collectionSkuId: ID
+  specificationFieldId: ID
+  specificationProduct: String
+  eanupcCode: String
+  releaseFrom: String
+  releaseTo: String
+  active: Boolean
+  visible: Boolean
+}

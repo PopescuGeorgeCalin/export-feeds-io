@@ -1,0 +1,6 @@
+{
+  "admin.app.export-feeds-io": {
+    "component": "Feeds",
+    "path": "/admin/app/export-feeds-io"
+  }
+}

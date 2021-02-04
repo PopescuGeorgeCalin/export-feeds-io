@@ -1,0 +1,61 @@
+{
+  "memory": 1024,
+  "ttl": 60,
+  "timeout": 3000,
+  "minReplicas": 1,
+  "maxReplicas": 100,
+  "workers": 10,
+  "routes": {
+    "feedCreate": {
+      "path": "/_v/feed/create",
+      "public": true
+    },
+    "feedUpdate": {
+      "path": "/_v/feed/update",
+      "public": true
+    },
+    "feedDelete": {
+      "path": "/_v/feed/delete/:id",
+      "public": true
+    },
+    "feedList": {
+      "path": "/_v/feed/list",
+      "public": true
+    },
+    "feedGet": {
+      "path": "/_v/feed/get/:id",
+      "public": true
+    },
+    "reportTrigger": {
+      "path": "/_v/feed/reportTrigger",
+      "public": true
+    },
+    "productUpdate": {
+      "path": "/_v/feed/productUpdate",
+      "public": true
+    },
+    "startJob": {
+      "path": "/_v/feed/startJob",
+      "public": true
+    },
+    "feedServe": {
+      "path": "/_v/feed/serve/:id",
+      "public": true
+    },
+    "initMasterdata": {
+      "path": "/_v/feed/schema",
+      "public": true
+    }
+  },
+  "events": {
+    "productFeed": {
+      "keys": ["product.feed"]
+    },
+    "productUpdate": {
+      "keys": ["product.feed.update"]
+    },
+    "jobCheck": {
+      "keys": ["product.feed.check"]
+    }
+  }
+}
